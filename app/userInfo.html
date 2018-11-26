@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>KD Swapper</title>
+    </head>
+    <body>
+        <h1>KD Switcher</h1>
+        <div id="infoPopup" boarder=1>
+            <form>
+                <fieldset>
+                    <legend>User Information:</legend>
+                    Name:<br>
+                    <input id="getName" type="text" name="name"><br>
+                    CA Email:<br>
+                    <input id="getEmail" type="email" name="email" value="@concordacademy.org"><br>
+                    KD Date for Switch:<br>
+                    <input id="getDate" type="date" name="date"><br><br>
+                    <button onclick="submitInfo()">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -10,6 +10,10 @@ app.use(express.static(htmlPath));
 
 io.on('connection', function (socket) {
     console.log('a user connected');
+
+    socket.on('inputKD', (name, email, date) => {
+        console.log(name, email, date);
+    });
 });
 
 http.listen(3000, function () {
