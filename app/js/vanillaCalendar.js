@@ -31,20 +31,16 @@ var vanillaCalendar = {
     })
   },
 
-  createDay: function (num, day, year) {
+  createDay: function (num, day, month, year) {
     var newDay = document.createElement('div')
     var dateEl = document.createElement('span')
-    dateEl.innerHTML = num
+    dateEl.innerHTML = num + (dateHasEvent(year, month+1, num) ? ' •' : '');
     newDay.className = 'vcal-date'
     newDay.setAttribute('data-calendar-date', this.date)
 
     // if it's the first day of the month
     if (num === 1) {
-      if (day === 0) {
-        newDay.style.marginLeft = (6 * 14.28) + '%'
-      } else {
-        newDay.style.marginLeft = ((day - 1) * 14.28) + '%'
-      }
+      newDay.style.marginLeft = (day * 14.28) + '%'
     }
 
     if (this.options.disablePastDays && this.date.getTime() <= this.todaysDate.getTime() - 1) {
@@ -85,6 +81,7 @@ var vanillaCalendar = {
       this.createDay(
         this.date.getDate(),
         this.date.getDay(),
+        this.date.getMonth(),
         this.date.getFullYear()
       )
       this.date.setDate(this.date.getDate() + 1)
