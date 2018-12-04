@@ -11,10 +11,10 @@ function submitInfo() {
     let email = document.getElementById('getEmail').value;
     let date = document.getElementById('getDate').value;
 
-    //if(confirm('Is the following information correct?\nName: '+name+'\nEmail: '+email+'\nDate: '+date)) {
-    socket.emit('inputKD', name, email, date);
-    window.location.href = window.location.origin + '/index.html';
-    //}
+    if(confirm('Is the following information correct?\nName: '+name+'\nEmail: '+email+'\nDate: '+date)) {
+        socket.emit('inputKD', name, email, date);
+        window.location.href = window.location.origin;
+    }
 }
 
 function dateHasEvent(y, m, d) {
