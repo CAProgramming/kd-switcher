@@ -37,6 +37,7 @@ var vanillaCalendar = {
     dateEl.innerHTML = num + (dateHasEvent(year, month+1, num) ? ' •' : '');
     newDay.className = 'vcal-date'
     newDay.setAttribute('data-calendar-date', this.date)
+    newDay.setAttribute('data-date-key', dateToKey(year, month+1, num))
 
     // if it's the first day of the month
     if (num === 1) {
@@ -69,6 +70,8 @@ var vanillaCalendar = {
           '[data-calendar-label="picked"]'
         )[0]
         picked.innerHTML = this.dataset.calendarDate
+        var eventList = document.getElementById('dateEventList');
+        eventList.innerHTML = getEvent(this.dataset.dateKey);
         _this.removeActiveClass()
         this.classList.add('vcal-date--selected')
       })

@@ -28,3 +28,13 @@ function dateToKey(y, m, d) {
     var day = (d.toString().length === 2 ? d.toString() : '0' + d.toString());
     return year + '-' + month + '-' + day;
 }
+
+function getEvent(key) {
+    var str = '';
+    if(cal[key] !== undefined) {
+        cal[key].forEach(e => {
+            str += '<li class="list-group-item">'+e.name+': '+e.email+'</li>';
+        });
+    }
+    return (str.length > 0 ? '<li class="list-group-item"><b>Available KD Switch(es):</b></li>'+str:'<li class="list-group-item">No KD open on this date.</li>');
+}

@@ -37,10 +37,11 @@
             </div>
             <div class="vcal-body" data-calendar-area="month"></div>
         </div>
-        <p class="demo-picked">
+        <p class="demo-picked" hidden>
             Date picked:
             <span data-calendar-label="picked"></span>
         </p>
+        <ul id="dateEventList" class="list-group"></ul>
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="js/vanillaCalendar.js"></script>
